@@ -1,8 +1,8 @@
-package com.usa.misiontic.proyectociclo3.controller;
+package com.usa.misiontic.Proyectociclo3.controller;
 
 
 import com.usa.misiontic.ProyectoCiclo3.entities.Reservation;
-import com.usa.misiontic.proyectociclo3.service.ReservasService;
+import com.usa.misiontic.Proyectociclo3.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -11,18 +11,18 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/Reservation")
-public class ReservasController {
+public class ReservationController {
 
     @Autowired
-    private ReservasService reservasService;
+    private ReservationService reservationService;
 
     @GetMapping("/all")
     public List<Reservation> getAll(){
-        return reservasService.getAll();
+        return reservationService.getAll();
     }
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public Reservation save(@RequestBody  Reservation p){
-        return reservasService.save(p);
+        return reservationService.save(p);
     }
 }

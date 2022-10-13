@@ -1,7 +1,7 @@
-package com.usa.misiontic.proyectociclo3.service;
+package com.usa.misiontic.Proyectociclo3.service;
 
 import com.usa.misiontic.ProyectoCiclo3.entities.Category;
-import com.usa.misiontic.proyectociclo3.repository.CategoryRepository;
+import com.usa.misiontic.Proyectociclo3.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +17,7 @@ public class CategoryService {
     public List<Category> getAll(){
         return categoryRepository.getAll();
     }
-    public Optional<Category> getProduct(int id){
+    public Optional<Category> getBox(int id){
         return categoryRepository.getCategory(id);
     }
     public Category save(Category p){
@@ -39,6 +39,10 @@ public class CategoryService {
                 if(p.getName()!=null){
                     q.get().setName(p.getName());
                 }
+                if(p.getDescription()!=null){
+                    q.get().setDescription(p.getDescription());
+                }   
+                
                 categoryRepository.save(q.get());
                 return q.get();
             }else{

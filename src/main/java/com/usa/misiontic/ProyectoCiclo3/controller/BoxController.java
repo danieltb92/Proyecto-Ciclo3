@@ -1,9 +1,9 @@
-package com.usa.misiontic.proyectociclo3.controller;
+package com.usa.misiontic.Proyectociclo3.controller;
 
 
 
 import com.usa.misiontic.ProyectoCiclo3.entities.Box;
-import com.usa.misiontic.proyectociclo3.service.BoxService;
+import com.usa.misiontic.Proyectociclo3.service.BoxService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -16,14 +16,13 @@ public class BoxController {
 
     @Autowired
     private BoxService boxService;
-
     @GetMapping("/all")
     public List<Box> getAll(){
         return boxService.getAll();
     }
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Box save(@RequestBody  Box p){
-        return boxService.save(p);
+    public Box save(@RequestBody  Box box){
+        return boxService.save(box);
     }
 }

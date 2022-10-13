@@ -1,8 +1,8 @@
-package com.usa.misiontic.proyectociclo3.controller;
+package com.usa.misiontic.Proyectociclo3.controller;
 
 
 import com.usa.misiontic.ProyectoCiclo3.entities.Category;
-import com.usa.misiontic.proyectociclo3.service.CategoryService;
+import com.usa.misiontic.Proyectociclo3.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

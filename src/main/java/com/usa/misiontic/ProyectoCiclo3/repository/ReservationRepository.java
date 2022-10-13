@@ -1,4 +1,4 @@
-package com.usa.misiontic.proyectociclo3.repository;
+package com.usa.misiontic.ProyectoCiclo3.repository;
 
 
 import com.usa.misiontic.ProyectoCiclo3.entities.Reservation;
@@ -10,21 +10,21 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class ReservasRepository {
+public class ReservationRepository {
 
     @Autowired
-    private ReservationCrudRepository reservasCrudRepository;
+    private ReservationCrudRepository reservationCrudRepository;
     public List<Reservation> getAll(){
-        return (List<Reservation>) reservasCrudRepository.findAll();
+        return (List<Reservation>) reservationCrudRepository.findAll();
     }
-    public Optional<Reservation> getReservas(int id){
-        return reservasCrudRepository.findById(id);
+    public Optional<Reservation> getReservation(int id){
+        return reservationCrudRepository.findById(id);
     }
     public Reservation save(Reservation p){
-        return reservasCrudRepository.save(p);
+        return reservationCrudRepository.save(p);
     }
     public void delete(Reservation p){
-        reservasCrudRepository.delete(p);
+        reservationCrudRepository.delete(p);
     }
 
 }

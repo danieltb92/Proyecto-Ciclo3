@@ -2,6 +2,11 @@ package com.usa.misiontic.ProyectoCiclo3.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -14,10 +19,12 @@ public class Box implements Serializable {
     private Integer id;
     private String name;
     private String location;
+    private Integer capacity;
     private String description;
+    
     @ManyToOne
     @JoinColumn(name = "categoryId")
-    @JsonIgnoreProperties("libs")
+    @JsonIgnoreProperties("boxes")
     private Category category;
 
     public Integer getId() {
@@ -42,6 +49,14 @@ public class Box implements Serializable {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public Integer getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(Integer capacity) {
+        this.capacity = capacity;
     }
 
     public String getDescription() {

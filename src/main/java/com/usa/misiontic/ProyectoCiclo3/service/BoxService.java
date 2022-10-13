@@ -1,8 +1,8 @@
-package com.usa.misiontic.proyectociclo3.service;
+package com.usa.misiontic.Proyectociclo3.service;
 
 
 import com.usa.misiontic.ProyectoCiclo3.entities.Box;
-import com.usa.misiontic.proyectociclo3.repository.BoxRepository;
+import com.usa.misiontic.Proyectociclo3.repository.BoxRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,45 +21,48 @@ public class BoxService {
     public Optional<Box> getBox(int id){
         return boxRepository.getBox(id);
     }
-    public Box save(Box p){
-        if(p.getId()==null){
-            return boxRepository.save(p);
+    public Box save(Box box){
+        if(box.getId()==null){
+            return boxRepository.save(box);
         }else{
-            Optional<Box> e = boxRepository.getBox(p.getId());
+            Optional<Box> e = boxRepository.getBox(box.getId());
             if(e.isPresent()){
-                return p;
+                return box;
             }else{
-                return boxRepository.save(p);
+                return boxRepository.save(box);
             }
         }
     }
-    public Box update(Box p){
-        if(p.getId()!=null){
-            Optional<Box> q = boxRepository.getBox(p.getId());
+    public Box update(Box box){
+        if(box.getId()!=null){
+            Optional<Box> q = boxRepository.getBox(box.getId());
             if(q.isPresent()){
-                if(p.getName()!=null){
-                    q.get().setName(p.getName());
+                if(box.getName()!=null){
+                    q.get().setName(box.getName());
                 }
-                if(p.getDescription()!=null){
-                    q.get().setDescription(p.getDescription());
+                if(box.getDescription()!=null){
+                    q.get().setDescription(box.getDescription());
                 }
-                if(p.getLocation()!=null){
-                    q.get().setLocation(p.getLocation());
+                if(box.getLocation()!=null){
+                    q.get().setLocation(box.getLocation());
                 }
-                if(p.getCategory()!=null){
-                    q.get().setCategory(p.getCategory());
+                if(box.getCapacity()!=null){
+                    q.get().setCapacity(box.getCapacity());
+                }
+                if(box.getCategory()!=null){
+                    q.get().setCategory(box.getCategory());
                 }
 
                 boxRepository.save(q.get());
                 return q.get();
             }else{
-                return p;
+                return box;
             }
         }else{
-            return p;
+            return box;
         }
     }
-    public boolean delete(int id){
+    public boolean deleteBox(int id){
         boolean flag=false;
         Optional<Box>p= boxRepository.getBox(id);
         if(p.isPresent()){

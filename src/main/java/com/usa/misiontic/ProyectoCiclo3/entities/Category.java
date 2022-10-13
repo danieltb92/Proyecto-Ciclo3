@@ -1,4 +1,4 @@
-package com.usa.misiontic.ProyectoCiclo3.entities;
+  package com.usa.misiontic.ProyectoCiclo3.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -19,12 +19,6 @@ public class Category implements Serializable {
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "category")
     @JsonIgnoreProperties("category")
     private List<Box> boxes;
-
-
-
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "category")
-    @JsonIgnoreProperties("category")
-    private List<Reservation> reservation;
 
     public Integer getIdCategory() {
         return idCategory;
@@ -57,15 +51,7 @@ public class Category implements Serializable {
     public void setBoxes(List<Box> boxes) {
         this.boxes = boxes;
     }
-
-    public List<Reservation> getReservation() {
-        return reservation;
-    }
-
-    public void setReservation(List<Reservation> reservation) {
-        this.reservation = reservation;
-    }
-
+    
 
     
 }

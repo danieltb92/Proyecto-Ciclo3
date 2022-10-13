@@ -1,8 +1,8 @@
-package com.usa.misiontic.proyectociclo3.service;
+package com.usa.misiontic.Proyectociclo3.service;
 
 
 import com.usa.misiontic.ProyectoCiclo3.entities.Client;
-import com.usa.misiontic.proyectociclo3.repository.ClientRepository;
+import com.usa.misiontic.Proyectociclo3.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +18,7 @@ public class ClientService {
     public List<Client> getAll(){
         return clientRepository.getAll();
     }
-    public Optional<Client> getProduct(int id){
+    public Optional<Client> getBox(int id){
         return clientRepository.getClient(id);
     }
     public Client save(Client p){
@@ -41,6 +41,21 @@ public class ClientService {
                 if(p.getName()!=null){
                     q.get().setName(p.getName());
                 }
+                if(p.getIdClient()!=null){
+                    q.get().setIdClient(p.getIdClient());
+                }
+                if(p.getEmail()!=null){
+                    q.get().setEmail(p.getEmail());
+                }
+                if(p.getPassword()!=null){
+                    q.get().setPassword(p.getPassword());
+                }
+                if(p.getAge()!=null){
+                    q.get().setAge(p.getAge());
+                }
+    
+              
+                
                 clientRepository.save(q.get());
                 return q.get();
             }else{

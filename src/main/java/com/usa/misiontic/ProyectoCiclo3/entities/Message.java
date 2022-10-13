@@ -7,28 +7,27 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name = "reservation")
-public class Reservation implements Serializable {
+@Table(name = "message")
+public class Message implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idReservation;
+    private Integer idMessage;
     private String box;
     private String client;
-    private Date starDate;
-    private Date devolutionDate;
+    private String messageText;
 
     @ManyToOne
-    @JoinColumn(name = "categoryId")
-    @JsonIgnoreProperties("reservations")
+    @JoinColumn(name = "clientId")
+    @JsonIgnoreProperties("messages")
     private Category category;
 
-    public Integer getIdReservation() {
-        return idReservation;
+    public Integer getIdMessage() {
+        return idMessage;
     }
 
-    public void setIdReservation(Integer idReservation) {
-        this.idReservation = idReservation;
+    public void setIdMessage(Integer idMessage) {
+        this.idMessage = idMessage;
     }
 
     public String getBox() {
@@ -47,20 +46,12 @@ public class Reservation implements Serializable {
         this.client = client;
     }
 
-    public Date getStarDate() {
-        return starDate;
+    public String getMessageText() {
+        return messageText;
     }
 
-    public void setStarDate(Date starDate) {
-        this.starDate = starDate;
-    }
-
-    public Date getDevolutionDate() {
-        return devolutionDate;
-    }
-
-    public void setDevolutionDate(Date devolutionDate) {
-        this.devolutionDate = devolutionDate;
+    public void setMessageText(String messageText) {
+        this.messageText = messageText;
     }
 
     public Category getCategory() {
@@ -70,7 +61,6 @@ public class Reservation implements Serializable {
     public void setCategory(Category category) {
         this.category = category;
     }
-    
-    
 
+    
 }
