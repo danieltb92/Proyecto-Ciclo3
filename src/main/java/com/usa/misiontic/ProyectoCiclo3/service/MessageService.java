@@ -17,7 +17,7 @@ public class MessageService {
     public List<Message> getAll(){
         return messageRepository.getAll();
     }
-    public Optional<Message> getBox(int id){
+    public Optional<Message> getMessage(int id){
         return messageRepository.getMessage(id);
     }
     public Message save(Message p){
@@ -42,12 +42,7 @@ public class MessageService {
                 if(p.getMessageText()!=null){
                     q.get().setMessageText(p.getMessageText());
                 }
-                if(p.getBox()!=null){
-                    q.get().setBox(p.getBox());
-                }
-                if(p.getClient()!=null){
-                    q.get().setClient(p.getClient());
-                }
+             
         
                 messageRepository.save(q.get());
                 return q.get();

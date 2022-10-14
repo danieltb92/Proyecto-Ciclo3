@@ -17,7 +17,7 @@ public class ReservationService {
     public List<Reservation> getAll(){
         return reservationRepository.getAll();
     }
-    public Optional<Reservation> getBox(int id){
+    public Optional<Reservation> getReservation(int id){
         return reservationRepository.getReservation(id);
     }
     public Reservation save(Reservation p){
@@ -37,14 +37,9 @@ public class ReservationService {
             Optional<Reservation> q =reservationRepository.getReservation(p.getIdReservation());
             if(q.isPresent()){
                 if(p.getIdReservation()!=null){
-                    q.get().setIdReservation(p.getIdReservation());
+                    q.get().setIdReservation(p.getIdReservation());   
                 }
-                if(p.getBox()!=null){
-                    q.get().setBox(p.getBox());
-                }
-                if(p.getClient()!=null){
-                    q.get().setClient(p.getClient());
-                }
+       
                 if(p.getStarDate()!=null){
                     q.get().setStarDate(p.getStarDate());
                 }

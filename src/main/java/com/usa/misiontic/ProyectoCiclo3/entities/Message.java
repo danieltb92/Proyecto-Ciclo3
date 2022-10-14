@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
 
 @Entity
 @Table(name = "message")
@@ -13,14 +12,17 @@ public class Message implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idMessage;
-    private String box;
-    private String client;
     private String messageText;
 
     @ManyToOne
+    @JoinColumn(name = "boxId")
+    @JsonIgnoreProperties("messages, reservations")
+    private Box box;
+    
+    @ManyToOne
     @JoinColumn(name = "clientId")
-    @JsonIgnoreProperties("messages")
-    private Category category;
+    @JsonIgnoreProperties("messages, reservations")
+    private Client client;
 
     public Integer getIdMessage() {
         return idMessage;
@@ -28,22 +30,6 @@ public class Message implements Serializable {
 
     public void setIdMessage(Integer idMessage) {
         this.idMessage = idMessage;
-    }
-
-    public String getBox() {
-        return box;
-    }
-
-    public void setBox(String box) {
-        this.box = box;
-    }
-
-    public String getClient() {
-        return client;
-    }
-
-    public void setClient(String client) {
-        this.client = client;
     }
 
     public String getMessageText() {
@@ -54,12 +40,20 @@ public class Message implements Serializable {
         this.messageText = messageText;
     }
 
-    public Category getCategory() {
-        return category;
+    public Box getBox() {
+        return box;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setBox(Box box) {
+        this.box = box;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
     }
 
     

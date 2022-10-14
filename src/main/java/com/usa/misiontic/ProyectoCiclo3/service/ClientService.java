@@ -18,7 +18,7 @@ public class ClientService {
     public List<Client> getAll(){
         return clientRepository.getAll();
     }
-    public Optional<Client> getBox(int id){
+    public Optional<Client> getClient(int id){
         return clientRepository.getClient(id);
     }
     public Client save(Client p){
