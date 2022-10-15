@@ -25,4 +25,21 @@ public class ClientController {
     public Client save(@RequestBody  Client c){
         return clientService.save(c);
     }
+    
+    @GetMapping("/id")
+    public List<Client> getAll(@PathVariable("id")int id){
+        return clientService.getAll();
+    }
+
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Client update(@RequestBody  Client p){
+        return clientService.update(p);
+    }
+    
+    @DeleteMapping("/id")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id")int id){
+        return clientService.delete(id);
+    }
 }

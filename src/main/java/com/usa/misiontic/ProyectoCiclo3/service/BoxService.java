@@ -62,7 +62,7 @@ public class BoxService {
             return box;
         }
     }
-    public boolean deleteBox(int id){
+    public boolean delete(int id){
         boolean flag=false;
         Optional<Box>p= boxRepository.getBox(id);
         if(p.isPresent()){

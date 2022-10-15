@@ -20,9 +20,29 @@ public class ReservationController {
     public List<Reservation> getAll(){
         return reservationService.getAll();
     }
+    
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public Reservation save(@RequestBody  Reservation p){
         return reservationService.save(p);
     }
+    
+    @GetMapping("/id")
+    public List<Reservation> getAll(@PathVariable("id")int id){
+        return reservationService.getAll();
+    }
+    
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Reservation update(@RequestBody  Reservation p){
+        return reservationService.update(p);
+    }
+    
+    @DeleteMapping("/id")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id")int id){
+        return reservationService.delete(id);
+    }
+   
+    
 }

@@ -20,9 +20,27 @@ public class MessageController {
     public List<Message> getAll(){
         return messageService.getAll();
     }
+    
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public Message save(@RequestBody  Message p){
         return messageService.save(p);
+    }
+    
+    @GetMapping("/id")
+    public List<Message> getAll(@PathVariable("id")int id){
+        return messageService.getAll();
+    }
+
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Message update(@RequestBody  Message p){
+        return messageService.update(p);
+    }
+    
+    @DeleteMapping("/id")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id")int id){
+        return messageService.delete(id);
     }
 }
