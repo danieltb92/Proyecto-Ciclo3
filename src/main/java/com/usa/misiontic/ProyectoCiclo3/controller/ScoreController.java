@@ -27,7 +27,7 @@ public class ScoreController {
         return scoreService.save(p);
     }
     
-    @GetMapping("/id")
+    @GetMapping("/{id}")
     public Optional<Score> getScore(@PathVariable("id")int id){
         return scoreService.getScore(id);
     }
@@ -38,7 +38,7 @@ public class ScoreController {
         return scoreService.update(p);
     }
     
-    @DeleteMapping("/id")
+    @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id")int scoreId){
         return scoreService.deleteScore(scoreId);

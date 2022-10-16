@@ -30,7 +30,7 @@ public class ReservationController {
     
     //Reto 4
     
-    @GetMapping("/id")
+    @GetMapping("/{id}")
     public Optional<Reservation> getReservation(@PathVariable("id")int id){
         return reservationService.getReservation(id);
     }
@@ -41,7 +41,7 @@ public class ReservationController {
         return reservationService.update(p);
     }
     
-    @DeleteMapping("/id")
+    @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id")int reservationId){
         return reservationService.deleteReservation(reservationId);

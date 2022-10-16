@@ -27,7 +27,7 @@ public class ClientController {
         return clientService.save(c);
     }
     
-    @GetMapping("/id")
+    @GetMapping("/{id}")
     public Optional<Client> getClient(@PathVariable("id")int id){
         return clientService.getClient(id);
     }
@@ -38,7 +38,7 @@ public class ClientController {
         return clientService.update(p);
     }
     
-    @DeleteMapping("/id")
+    @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id")int clientId){
         return clientService.deleteClient(clientId);

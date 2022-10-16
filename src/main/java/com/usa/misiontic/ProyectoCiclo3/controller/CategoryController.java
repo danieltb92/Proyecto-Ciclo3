@@ -29,7 +29,7 @@ public class CategoryController {
         return categoryService.save(p);
     }
     
-    @GetMapping("/id")
+    @GetMapping("/{id}")
     public Optional<Category> getCategory(@PathVariable("id")int id){
         return categoryService.getCategory(id);
     }
@@ -40,7 +40,7 @@ public class CategoryController {
         return categoryService.update(p);
     }
     
-    @DeleteMapping("/id")
+    @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id")int categoryId){
         return categoryService.deleteCategory(categoryId);
