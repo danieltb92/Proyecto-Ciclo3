@@ -29,7 +29,7 @@ public class Box implements Serializable {
     private Category category;
     
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "box")
-    @JsonIgnoreProperties("box")
+    @JsonIgnoreProperties({"box","client"})
     private List<Message> messages;
     
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "box")
