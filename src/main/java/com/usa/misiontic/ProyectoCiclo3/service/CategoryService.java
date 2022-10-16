@@ -4,7 +4,6 @@ import com.usa.misiontic.ProyectoCiclo3.entities.Category;
 import com.usa.misiontic.Proyectociclo3.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -35,7 +34,7 @@ public class CategoryService {
     public Category update(Category p){
         if(p.getId()!=null){
             Optional<Category> q = categoryRepository.getCategory(p.getId());
-            if(q.isPresent()){
+            if(!q.isPresent()){
                 if(p.getName()!=null){
                     q.get().setName(p.getName());
                 }

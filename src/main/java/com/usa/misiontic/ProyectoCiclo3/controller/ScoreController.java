@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/Score")
@@ -27,8 +28,8 @@ public class ScoreController {
     }
     
     @GetMapping("/id")
-    public List<Score> getAll(@PathVariable("id")int id){
-        return scoreService.getAll();
+    public Optional<Score> getScore(@PathVariable("id")int id){
+        return scoreService.getScore(id);
     }
 
     @PutMapping("/update")
@@ -39,7 +40,7 @@ public class ScoreController {
     
     @DeleteMapping("/id")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public boolean delete(@PathVariable("id")int id){
-        return scoreService.deleteScore(id);
+    public boolean delete(@PathVariable("id")int scoreId){
+        return scoreService.deleteScore(scoreId);
     }
 }

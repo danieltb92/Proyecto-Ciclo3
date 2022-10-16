@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/Client")
@@ -27,8 +28,8 @@ public class ClientController {
     }
     
     @GetMapping("/id")
-    public List<Client> getAll(@PathVariable("id")int id){
-        return clientService.getAll();
+    public Optional<Client> getClient(@PathVariable("id")int id){
+        return clientService.getClient(id);
     }
 
     @PutMapping("/update")
@@ -39,7 +40,7 @@ public class ClientController {
     
     @DeleteMapping("/id")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public boolean delete(@PathVariable("id")int id){
-        return clientService.deleteCliente(id);
+    public boolean delete(@PathVariable("id")int clientId){
+        return clientService.deleteClient(clientId);
     }
 }
