@@ -26,5 +26,18 @@ public class ReservationRepository {
     public void delete(Reservation reservation){
         reservationCrudRepository.delete(reservation);
     }
+    
+    //Reto 5
+    
+    //public List<Reservation> getDatesReport(dateA,dateB){
+    //    return reservationCrudRepository.findAllByStartDateAfterAndStartDateBefore(A,B);
+    //}
+    //public List<Reservation> getStatusReport(String sts){
+    //    return reservationCrudRepository.findAllStatus(sts);
+    //}
+
+    //public List<Object[]> getTopClients(){
+    //    return reservationCrudRepository.getTopClients();
+    //}
 
 }

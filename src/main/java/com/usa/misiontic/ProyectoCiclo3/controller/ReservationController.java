@@ -50,16 +50,16 @@ public class ReservationController {
     //Reto 5
     
     //@GetMapping("/report-dates/{dateA}/{dateB}")
-    //public List<Reservation> getByDates(@PathVariable("dateA")String da,@PathVariable("dateB")String db ){
+    //public List<Reservation> getDatesReport(@PathVariable("dateA")String da,@PathVariable("dateB")String db ){
     //    return reservationService.getReservationsByPeriod(da,db);
     //}
     //@GetMapping("/report-status")
-   // public StatusAccount getByStatus(){
+   // public StatusAccount getStatus(){
     //    return reservationService.getReportByStatus();
     //}
     //@GetMapping("/report-clients")
     //public List<TopClients> getTopClients(){
-    //    return reservationService.getTopclients();
+    //    return reservationService.getTopClients();
     //}
     
     
