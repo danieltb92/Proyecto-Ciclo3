@@ -10,19 +10,37 @@ import java.io.Serializable;
 public class Score implements Serializable {
 
     @Id
-    private Integer score;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer idScore;
+    private String messageText;
+    private String stars;
 
     @OneToOne
-    @JoinColumn(name = "reservationId")
-    @JsonIgnoreProperties("reservationId")
+    @JsonIgnoreProperties ("score")
     private Reservation reservation;
 
-    public Integer getScore() {
-        return score;
+    public Integer getIdScore() {
+        return idScore;
     }
 
-    public void setScore(Integer score) {
-        this.score = score;
+    public void setIdScore(Integer idScore) {
+        this.idScore = idScore;
+    }
+
+    public String getMessageText() {
+        return messageText;
+    }
+
+    public void setMessageText(String messageText) {
+        this.messageText = messageText;
+    }
+
+    public String getStars() {
+        return stars;
+    }
+
+    public void setStars(String stars) {
+        this.stars = stars;
     }
 
     public Reservation getReservation() {
@@ -33,6 +51,5 @@ public class Score implements Serializable {
         this.reservation = reservation;
     }
 
-   
     
 }

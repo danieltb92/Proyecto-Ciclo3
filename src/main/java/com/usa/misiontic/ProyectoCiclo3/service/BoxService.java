@@ -62,15 +62,12 @@ public class BoxService {
             return box;
         }
     }
-    public boolean delete(int id){
-        boolean flag=false;
-        Optional<Box>p= boxRepository.getBox(id);
-        if(p.isPresent()){
-            boxRepository.delete(p.get());
-            flag=true;
-        }
-        return flag;
-
+    public boolean deleteBox(int id){
+        boolean d = getBox(id).map(box -> {
+            boxRepository.delete(box);
+            return true;
+        }).orElse(false);
+        return d;
     }
 
 

@@ -40,7 +40,7 @@ public class BoxController {
     @DeleteMapping("/id")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id")int id){
-        return boxService.delete(id);
+        return boxService.deleteBox(id);
     }
 }
 

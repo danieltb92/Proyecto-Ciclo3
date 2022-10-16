@@ -21,10 +21,10 @@ public class ScoreService {
         return scoreRepository.getScore(score);
     }
     public Score save(Score p){
-        if(p.getScore()==null){
+        if(p.getIdScore()==null){
             return scoreRepository.save(p);
         }else{
-            Optional<Score> e =scoreRepository.getScore(p.getScore());
+            Optional<Score> e =scoreRepository.getScore(p.getIdScore());
             if(e.isPresent()){
                 return p;
             }else{
@@ -33,11 +33,11 @@ public class ScoreService {
         }
     }
     public Score update(Score p){
-        if(p.getScore()!=null){
-            Optional<Score> q =scoreRepository.getScore(p.getScore());
+        if(p.getIdScore()!=null){
+            Optional<Score> q =scoreRepository.getScore(p.getIdScore());
             if(q.isPresent()){
-                if(p.getScore()!=null){
-                    q.get().setScore(p.getScore());   
+                if(p.getIdScore()!=null){
+                    q.get().setIdScore(p.getIdScore());   
                 }
                 
                 scoreRepository.save(q.get());
@@ -49,15 +49,12 @@ public class ScoreService {
             return p;
         }
     }
-    public boolean delete(int id){
-        boolean flag=false;
-        Optional<Score>p=scoreRepository.getScore(id);
-        if(p.isPresent()){
-            scoreRepository.delete(p.get());
-            flag=true;
-        }
-        return flag;
-
+    public boolean deleteScore(int id){
+        boolean d = getScore(id).map(score -> {
+            scoreRepository.delete(score);
+            return true;
+        }).orElse(false);
+        return d;
     }
 
 
