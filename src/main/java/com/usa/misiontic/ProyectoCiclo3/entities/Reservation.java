@@ -15,6 +15,7 @@ public class Reservation implements Serializable {
     private Integer idReservation;
     private Date starDate;
     private Date devolutionDate;
+    private String status="created";
 
     @ManyToOne
     @JoinColumn(name = "boxId")
@@ -23,14 +24,13 @@ public class Reservation implements Serializable {
     
     @ManyToOne
     @JoinColumn(name = "clientId")
-    @JsonIgnoreProperties({"reservations, messages"})
+    @JsonIgnoreProperties({"reservations", "messages"})
     private Client client;
     
     @OneToOne(cascade= {CascadeType.REMOVE},mappedBy ="reservation")
-    @JsonIgnoreProperties({"reservation"})
+    @JsonIgnoreProperties({"reservations","score"})
     @JoinColumn(name = "score")
     
-
     private Score score;
 
     public Integer getIdReservation() {
@@ -55,6 +55,14 @@ public class Reservation implements Serializable {
 
     public void setDevolutionDate(Date devolutionDate) {
         this.devolutionDate = devolutionDate;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public Box getBox() {
