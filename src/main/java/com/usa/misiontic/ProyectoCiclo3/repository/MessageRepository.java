@@ -4,7 +4,6 @@ package com.usa.misiontic.Proyectociclo3.repository;
 import com.usa.misiontic.ProyectoCiclo3.entities.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
 import java.util.List;
 import java.util.Optional;
 import com.usa.misiontic.ProyectoCiclo3.repository.crudRepository.MessageCrudRepository;

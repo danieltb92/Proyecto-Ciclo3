@@ -28,6 +28,8 @@ public class ReservationController {
         return reservationService.save(p);
     }
     
+    //Reto 4
+    
     @GetMapping("/id")
     public Optional<Reservation> getReservation(@PathVariable("id")int id){
         return reservationService.getReservation(id);
@@ -45,5 +47,21 @@ public class ReservationController {
         return reservationService.deleteReservation(reservationId);
     }
    
+    //Reto 5
+    
+    //@GetMapping("/report-dates/{dateA}/{dateB}")
+    //public List<Reservation> getByDates(@PathVariable("dateA")String da,@PathVariable("dateB")String db ){
+    //    return reservationService.getReservationsByPeriod(da,db);
+    //}
+    //@GetMapping("/report-status")
+   // public StatusAccount getByStatus(){
+    //    return reservationService.getReportByStatus();
+    //}
+    //@GetMapping("/report-clients")
+    //public List<TopClients> getTopClients(){
+    //    return reservationService.getTopclients();
+    //}
+    
+    
     
 }
