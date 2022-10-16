@@ -1,8 +1,10 @@
-package com.usa.misiontic.Proyectociclo3.controller;
+package com.usa.misiontic.ProyectoCiclo3.controller;
 
 
 import com.usa.misiontic.ProyectoCiclo3.entities.Reservation;
-import com.usa.misiontic.Proyectociclo3.service.ReservationService;
+//import com.usa.misiontic.ProyectoCiclo3.entities.custome.StatusAccount;
+//import com.usa.misiontic.ProyectoCiclo3.entities.custome.TopClients;
+import com.usa.misiontic.ProyectoCiclo3.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +14,8 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/Reservation")
+@CrossOrigin(origins = "*")
+
 public class ReservationController {
 
     @Autowired
@@ -49,19 +53,16 @@ public class ReservationController {
    
     //Reto 5
     
-    //@GetMapping("/report-dates/{dateA}/{dateB}")
-    //public List<Reservation> getDatesReport(@PathVariable("dateA")String da,@PathVariable("dateB")String db ){
-    //    return reservationService.getReservationsByPeriod(da,db);
-    //}
-    //@GetMapping("/report-status")
-   // public StatusAccount getStatus(){
-    //    return reservationService.getReportByStatus();
-    //}
-    //@GetMapping("/report-clients")
-    //public List<TopClients> getTopClients(){
-    //    return reservationService.getTopClients();
-    //}
-    
-    
-    
+    /*@GetMapping("/report-dates/{dateA}/{dateB}")
+    public List<Reservation> getDatesReport(@PathVariable("dateA")String da,@PathVariable("dateB")String db ){
+        return reservationService.getReservationsByPeriod(da,db);
+    }
+    @GetMapping("/report-status")
+    public StatusAccount getStatus(){
+        return reservationService.getReservationsByPeriod();
+    }
+    @GetMapping("/report-clients")
+    public List<TopClients> getReportByStatus(){
+        return reservationService.getTopClients();
+    }*/
 }

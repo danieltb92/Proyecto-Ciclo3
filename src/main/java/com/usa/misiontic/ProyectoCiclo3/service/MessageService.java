@@ -2,7 +2,7 @@ package com.usa.misiontic.ProyectoCiclo3.service;
 
 
 import com.usa.misiontic.ProyectoCiclo3.entities.Message;
-import com.usa.misiontic.Proyectociclo3.repository.MessageRepository;
+import com.usa.misiontic.ProyectoCiclo3.repository.MessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;

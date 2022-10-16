@@ -1,11 +1,11 @@
 package com.usa.misiontic.ProyectoCiclo3.repository.crudRepository;
 
 import com.usa.misiontic.ProyectoCiclo3.entities.Reservation;
-
-import java.util.Date;
-import java.util.List;
-import org.springframework.data.jpa.repository.Query;
+//import java.util.Date;
+//import java.util.List;
 import org.springframework.data.repository.CrudRepository;
+//import org.springframework.data.jpa.repository.Query;
+
 
 
 
@@ -13,10 +13,10 @@ public interface ReservationCrudRepository extends CrudRepository<Reservation,In
     
     //Reto 5
     
-    //@Query(select c.category, COUNT(c.category) FROM Reservation AS c group by c.category order by COUNT(c.category)desc)
-    //public List<Object[]> countTotalReservationByCategory();
+    /*@Query(SELECT c.client, COUNT(c.client) FROM Reservation AS c group by c.client order by COUNT(c.client)DESC)
+    public List<Object[]> countTotalReservationByClient();
     
-    //public List<Reservation> findAllByStartDateAfterAndStartDateBefore(Date dateOne, Date dateTwo);
+    public List<Reservation> findAllByStartDateAfterAndStartDateBefore(Date A, Date B);
     
-    //public List<Reservation> findAllByDescription(String description);
+    public List<Reservation> findAllByStatus(String status);*/
 }

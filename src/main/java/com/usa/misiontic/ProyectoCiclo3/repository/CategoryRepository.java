@@ -1,4 +1,4 @@
-package com.usa.misiontic.Proyectociclo3.repository;
+package com.usa.misiontic.ProyectoCiclo3.repository;
 
 import com.usa.misiontic.ProyectoCiclo3.entities.Category;
 import com.usa.misiontic.ProyectoCiclo3.repository.crudRepository.CategoryCrudRepository;

@@ -28,7 +28,7 @@ public class MessageController {
         return messageService.save(p);
     }
     
-    @GetMapping("/id")
+    @GetMapping("/{id}")
     public Optional<Message> getMessage(@PathVariable("id")int id){
         return messageService.getMessage(id);
     }
@@ -39,7 +39,7 @@ public class MessageController {
         return messageService.update(p);
     }
     
-    @DeleteMapping("/id")
+    @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id")int messageId){
         return messageService.deleteMessage(messageId);

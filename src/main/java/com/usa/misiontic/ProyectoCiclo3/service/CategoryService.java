@@ -1,7 +1,7 @@
-package com.usa.misiontic.Proyectociclo3.service;
+package com.usa.misiontic.ProyectoCiclo3.service;
 
 import com.usa.misiontic.ProyectoCiclo3.entities.Category;
-import com.usa.misiontic.Proyectociclo3.repository.CategoryRepository;
+import com.usa.misiontic.ProyectoCiclo3.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
