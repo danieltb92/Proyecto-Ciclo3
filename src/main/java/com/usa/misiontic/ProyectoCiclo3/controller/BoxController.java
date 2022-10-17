@@ -27,7 +27,7 @@ public class BoxController {
         return boxService.save(box);
     }
     
-    @GetMapping("/id")
+    @GetMapping("/{id}")
     public Optional<Box> getBox(@PathVariable("id")int id){
         return boxService.getBox(id);
     }
@@ -38,7 +38,7 @@ public class BoxController {
         return boxService.update(p);
     }
     
-    @DeleteMapping("/id")
+    @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id")int boxId){
         return boxService.deleteBox(boxId);

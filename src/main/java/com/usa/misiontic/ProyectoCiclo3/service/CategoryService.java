@@ -35,13 +35,15 @@ public class CategoryService {
         if(p.getId()!=null){
             Optional<Category> q = categoryRepository.getCategory(p.getId());
             if(!q.isPresent()){
-                if(p.getName()!=null){
-                    q.get().setName(p.getName());
+                if(p.getId()!=null){
+                    q.get().setId(p.getId());
                 }
                 if(p.getDescription()!=null){
                     q.get().setDescription(p.getDescription());
+                }
+                if(p.getName()!=null){
+                    q.get().setName(p.getName());
                 }   
-                
                 categoryRepository.save(q.get());
                 return q.get();
             }else{
@@ -51,6 +53,7 @@ public class CategoryService {
             return p;
         }
     }
+    
     public boolean deleteCategory(int id){
         boolean d = getCategory(id).map(category -> {
             categoryRepository.delete(category);
